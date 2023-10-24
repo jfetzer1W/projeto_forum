@@ -125,15 +125,15 @@ background: white;
 
 export const DivCarsP = styled.div`
 width: 100.5vw;
-height: 105vh;
-background-color: green;
+height: 78vh;
+background-color: #A9A9A9;
 display: flex;
 flex-direction: row;
 justify-content: space-between;
 padding: 50px;
 `
 export const DivCars = styled.div`
-background-color: green;
+background-color: #A9A9A9;
 display: flex;
 flex-direction: row;
 `

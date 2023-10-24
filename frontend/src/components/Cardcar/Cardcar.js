@@ -1,14 +1,14 @@
 import { Card, CardHeader, CardBody, Text, CardFooter } from '@chakra-ui/react'
 import { Photos } from './styled'
-import Photo1 from "../../Assets/imagemteste.webp"
 
-function Cardcar() {
+function Cardcar({nome, url, valor}) {
     return (
-        <Card w='20vw' h='60vh'bg='gray' m='1'>
+    
+        <Card w='60vw' h='60vh'bg='767578' m='1' lineHeight='1' textAlign='justify'>
             <CardBody>
-                <Text>Noticia.
-                    Em Manutenção</Text>
-                    <Photos src={Photo1}/>
+                <img src= {url} />
+                <p>{nome}</p>
+                <p>{valor}</p>
             </CardBody>
         </Card>
     )
