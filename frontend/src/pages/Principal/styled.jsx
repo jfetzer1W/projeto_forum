@@ -142,3 +142,13 @@ export  const DivCars2 = styled.div`
 display: flex;
 flex-direction: row;
 `
+export const CarTitle = styled.div`
+width: 43vw;
+background-color: #A9A9A9;
+display: flex;
+font-family: Genos;
+font-size: 40px;
+font-style: normal;
+font-weight: 700;
+line-height: 110%; /* 22px */;
+`

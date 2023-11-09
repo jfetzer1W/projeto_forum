@@ -1,38 +1,43 @@
  [
       {
         "id": 1,
-        "nome": "Tesla Model S",
-        "valor": "R$ 889.000" ,
+        "nome": "ㅤ",
+        "valor": "Tesla Model S" ,
+        "info": "R$ 1.140.000",
         "imagem": "https://th.bing.com/th/id/R.efa4a7896898b5f1612fa41389b897a7?rik=JKKc2ukNtqHhIg&pid=ImgRaw&r=0"
       },
       {
         "id": 2,
-        "nome": "Nissan Leaf",
-        "valor": "R$ 195.000",
+        "valor": "Nissan Leaf",
+        "info": "R$ 195.000",
         "imagem": "https://th.bing.com/th/id/R.608e8bd066453c86df5d4ccd687e8b13?rik=sa9YDzcDoW44uQ&pid=ImgRaw&r=0&sres=1&sresct=1"
       },
       {
         "id": 3,
-        "nome": "Porsche Taycan",
-        "valor": "R$ 589.000" ,
+        "nome": "",
+        "valor": "R$ Porsche Taycan" ,
+        "info": "R$ 629.000",
         "imagem": "https://dealerimages.dealereprocess.com/image/upload/c_limit,f_auto,fl_lossy,w_auto/v1/svp/dep/22porschetaycan4s4wdsd1fa/porsche_22taycan4s4wdsd1fa_angularfront_white"
       },
       {
         "id": 4,
-        "nome": "Volvo XC40",
-        "valor": "R$ 269.990" ,
+        "nome": "ㅤ",
+        "valor": "Volvo XC40" ,
+        "info": "R$ R$ 269.990",
         "imagem": "https://th.bing.com/th/id/R.d16e55b56db8bbe231151e5cc51c990c?rik=fSJn9g4MWykHHg&pid=ImgRaw&r=0"
       },
       {
         "id": 5,
-        "nome": "BYD Yuan Plus",
-        "valor": "R$ 269.990" ,
+        "nome": "",
+        "valor": "BYD Yuan Plus" ,
+        "info": "R$ 269.000",
         "imagem": "https://cdn.deagenciapa.com/wp-content/uploads/2023/03/44544.png"
       },
       {
         "id": 6,
-        "nome": "BYD Dolphin Plus",
-        "valor": "R$ 179.880",
+        "nome": "ㅤ",
+        "valor": "BYD Dolphin Plus",
+        "info": "R$ 179.880",
         "imagem": "https://www.electrifying.com/files/O2ZuUf9PFpmygZVz/DolphinCutout.png"
       }
     ]

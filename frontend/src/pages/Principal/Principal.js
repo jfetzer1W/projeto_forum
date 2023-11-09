@@ -17,7 +17,8 @@ import {
     Div3,
     DivCars,
     DivCars2,
-    DivCarsP
+    DivCarsP,
+    CarTitle
 } from "./styled"
 
 import PropoImage2 from "../../Assets/charge.png"
@@ -75,6 +76,7 @@ function Principal() {
                 })}
                 
             </Div3>
+            <CarTitle> Carros Mais vendidos em 2023</CarTitle>
             <DivCarsP>
                 {carros.map((dado) => {
                     return(<>
@@ -82,6 +84,8 @@ function Principal() {
                         url={dado.imagem}
                         nome={dado.nome}
                         valor={dado.valor}
+                        name={dado.name}
+                        info={dado.info}
                         />
                     </>)
                 })}

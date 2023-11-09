@@ -3,13 +3,60 @@ import { Body, Box, CaixaDeTexto, Container, Form, FormImage, Header, Image, Inp
 import ImagemPrincipal from "../../Assets/imageleitura.png"
 import Logo from "../../Assets/imagemlogo.jpg"
 import { useNavigate } from "react-router-dom"
+import { useState } from "react"
+import axios from "axios"
+import { baseUrl } from "../../services/Api"
 
 function Login() {
     const navigate = useNavigate()
+    const [formData, setFormData] = useState({
+        firstName: "",
+        sobrenome: "",
+        email: "",
+        telefone: "",
+        senha: "",
+        confirmSenha: ""
+    });
 
     const goToHome = () => {
         navigate('/cadastro')
     }
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        if (formData.senha !== formData.confirmSenha) {
+            alert("Senhas não coincidem")
+        } else {
+            console.log(formData)
+            axios.post(`${baseUrl}/user/create`, formData)
+                .then(function (response) {
+                    alert("Deu certo, JOÃO")
+                    goToHome()
+                })
+                .catch(function (error) {
+                    console.log(error)
+                });
+        }
+
+        setFormData({
+            firstName: "",
+            sobrenome: "",
+            email: "",
+            telefone: "",
+            senha: "",
+            confirmSenha: ""
+        });
+    }
+
+    const handleChange = (e) => {
+        const { name, value } = e.target;
+        setFormData({
+            ...formData,
+            [name]: value
+        });
+    }
+
+
     return (
         <>
 
@@ -25,36 +72,82 @@ function Login() {
                                 <LogoImg src={Logo} />
                                 <StyleForm >
                                     <div>
-
-
                                         <InputBox>
                                             <Label for="firstname">Primeiro Nome</Label>
-                                            <Input id="firstname" type="text" name="firstname" placeholder="Digite seu primeiro nome" required></Input>
+                                            <Input
+                                                id="firstName"
+                                                type="text"
+                                                name="firstName"
+                                                value={formData.firstName}
+                                                onChange={handleChange}
+                                                placeholder="Digite seu primeiro nome"
+                                                required
+                                            />
                                         </InputBox>
                                         <InputBox>
-                                            <Label for="firstname">Sobrenome</Label>
-                                            <Input id="firstname" type="text" name="firstname" placeholder="Digite seu sobrenome" required></Input>
+                                            <Label for="sobrenome">Sobrenome</Label>
+                                            <Input 
+                                                id="sobrenome"
+                                                type="text"
+                                                name="sobrenome"
+                                                value={formData.sobrenome}
+                                                onChange={handleChange}
+                                                placeholder="Digite seu sobrenome"
+                                                required
+                                            />
                                         </InputBox>
                                         <InputBox>
-                                            <Label for="firstname">Email</Label>
-                                            <Input id="firstname" type="text" name="firstname" placeholder="Digite seu email" required></Input>
+                                            <Label for="email">Email</Label>
+                                            <Input 
+                                                id="email"
+                                                type="text"
+                                                name="email"
+                                                value={formData.email}
+                                                onChange={handleChange}
+                                                placeholder="Digite seu email"
+                                                required
+                                            />
                                         </InputBox>
                                     </div>
                                     <div>
                                         <InputBox>
-                                            <Label for="firstname">Telefone</Label>
-                                            <Input id="firstname" type="text" name="firstname" placeholder="Digite seu numero de telefone" required></Input>
+                                            <Label for="telefone">Telefone</Label>
+                                            <Input 
+                                                id="telefone"
+                                                type="text"
+                                                name="telefone"
+                                                value={formData.telefone}
+                                                onChange={handleChange}
+                                                placeholder="Digite seu numero de telefone"
+                                                required
+                                            />
                                         </InputBox><InputBox>
-                                            <Label for="firstname">Senha</Label>
-                                            <Input id="firstname" type="text" name="firstname" placeholder="Digite sua senha" required></Input>
+                                            <Label for="senha">Senha</Label>
+                                            <Input 
+                                                id="senha"
+                                                type="password"
+                                                name="senha"
+                                                value={formData.senha}
+                                                onChange={handleChange}
+                                                placeholder="Digite sua senha"
+                                                required
+                                            />
                                         </InputBox>
                                         <InputBox>
-                                            <Label for="firstname">Confirme sua senha</Label>
-                                            <Input id="firstname" type="text" name="firstname" placeholder="Confirme sua senha" required></Input>
+                                            <Label for="confirmSenha">Confirme sua senha</Label>
+                                            <Input 
+                                                id="confirmSenha"
+                                                type="password"
+                                                name="confirmSenha"
+                                                value={formData.confirmSenha}
+                                                onChange={handleChange}
+                                                placeholder="Digite seu primeiro nome"
+                                                required
+                                            />
                                         </InputBox>
                                     </div>
                                 </StyleForm>
-                                <Botao onClick={goToHome}>Continuar</Botao>
+                                <Botao onClick={handleSubmit}>Cadastrar</Botao>
                             </ContainerFormulario>
                         </Divi>
                     </Form>

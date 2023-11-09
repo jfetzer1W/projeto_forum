@@ -6,9 +6,14 @@ import { useNavigate } from "react-router-dom"
 function Header() {
     const navigate = useNavigate()
 
+    const goToConfig = () => {
+        navigate('/config')
+    }
+
     const goToHome = () => {
         navigate('/principal')
     }
+
 
     return (
         <>
@@ -16,14 +21,14 @@ function Header() {
                 <FirstContainer>
                     <Logo1 src={Logo} />
                     <Topicos onClick={goToHome}>Home</Topicos>
-                    <Topicos >Vantagens</Topicos>
-                    <Topicos >Proposta</Topicos>
                     <Topicos >Diferencial</Topicos>
+                    <Topicos >Notícias</Topicos>
                     <Topicos >Veículos</Topicos>
+                    <Topicos >Projeto</Topicos>
                 </FirstContainer>
                 <SecondContainer>
                     <Logins>
-                        <Topicos>João Fetzer</Topicos>
+                        <Topicos onClick={goToConfig}>Usuario1</Topicos>
                         <Foto />
                     </Logins>
                 </SecondContainer>
