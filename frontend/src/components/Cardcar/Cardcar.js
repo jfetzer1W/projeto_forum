@@ -4,7 +4,7 @@ import { Photos } from './styled'
 function Cardcar(props) {
     return (
     
-        <Card w='60vw' h='60vh'bg='767578' m='1' lineHeight='1' textAlign='justify'>
+        <Card w='60vw' h='40vh'bg='767578' m='1' lineHeight='1' textAlign='justify' >
             <CardBody>
                 <img src= {props.url} />
                 <p>{props.nome}</p>

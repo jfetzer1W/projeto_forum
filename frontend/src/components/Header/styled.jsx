@@ -60,4 +60,5 @@ export const Foto = styled.button`
     width: 40px;
     height: 40px;
     background-size: cover;
+    background-color: blue;
 `

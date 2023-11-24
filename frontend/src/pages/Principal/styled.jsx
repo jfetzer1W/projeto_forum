@@ -2,6 +2,10 @@ import {styled} from "styled-components"
 import Principala from "../../Assets/principal.png"
 import PropoImage2 from "../../Assets/charge.png"
 
+
+export const DivMaior = styled.div`
+overflow-x:hidden;
+`
 export const Cabeca = styled.div`
 width: 100%;
 height: 100vh;
@@ -38,6 +42,7 @@ export const Botao = styled.button`
     z-index: 10;
     font-family: Genos;
     gap: 15;
+    margin-left: 40px;
 `
 
 export const Divv = styled.div`
@@ -46,6 +51,7 @@ flex-direction: row;
 display: flex;
 width: 98vw;
 height: 80vh;
+background-color: white;
 `
 
 export const Proposta = styled.div`
@@ -63,6 +69,7 @@ text-transform: uppercase;
 display: flex;
 flex-direction: column;
 align-items: center;
+background-color: white;
 ` 
 export const TopicosPro = styled.div`
 width: 55vw;
@@ -70,7 +77,8 @@ height: 45vh;
 display: flex;
 flex-direction: row;
 justify-content: space-between;
-
+margin-top: -37px;
+background-color: white;
 `
 export const Baterias = styled.div`
 display: flex;
@@ -82,6 +90,7 @@ font-style: normal;
 font-weight: 700;
 gap: 3vh;
 line-height: 110%; /* 22px */;
+margin-top: 6vh;
 `
 
 export const Plugins = styled.div`
@@ -92,6 +101,8 @@ export const Plugins = styled.div`
     font-weight: 700;
     gap: 3vh;
     line-height: 110%; /* 22px */;
+    margin-right: 90px;
+    margin-top: 9vh;
 `
 
 export const Titulo = styled.div`
@@ -101,6 +112,8 @@ font-size: 20px;
 font-style: normal;
 font-weight: 700;
 line-height: 110%; /* 22px */;
+margin-top: -39px;
+margin-right: 20px;
 `
 
 export const Propospace = styled.div`
@@ -115,16 +128,20 @@ height: 60vh;
 `
 
 export const Div3 = styled.div`
-width:99vw;
+width: 100%;
 height: 80vh;
 display: flex;
 flex-direction: row;
 gap: 3vw;
-background: white;
+background: blue;
+overflow: auto;
+flex: 0 0 100vw;
+transition: transform 0.5s ease;
+
 `
 
 export const DivCarsP = styled.div`
-width: 100.5vw;
+// width: 100.5vw;
 height: 78vh;
 background-color: #A9A9A9;
 display: flex;
@@ -136,6 +153,8 @@ export const DivCars = styled.div`
 background-color: #A9A9A9;
 display: flex;
 flex-direction: row;
+justify-content: center;
+align-items: center;
 `
 
 export  const DivCars2 = styled.div`
@@ -151,4 +170,56 @@ font-size: 40px;
 font-style: normal;
 font-weight: 700;
 line-height: 110%; /* 22px */;
+`
+
+export const Rodape = styled.div`
+height: 60vh;
+background-color: #161E21;
+display: flex;
+`
+export const TextRo = styled.div`
+margin-left: 5vh;
+margin-top: 23vh;
+width: 10vw;
+height:20vh;
+color: white;
+font-family: Anybody;
+`
+
+export const TextName = styled.div`
+margin-left: -22.4vh;
+margin-top: 30vh;
+width: 30vw;
+height:20vh;
+color: white;
+font-family: Anybody;
+
+`
+export const Teorico = styled.button`
+margin-top: 28vh;
+margin-left: 25vh;
+display: flex;
+height: 46px;
+padding: 16px;
+justify-content: center;
+align-items: center;
+border-radius: 10px;
+border: 4px solid var(--blue, #00A8A8);
+background: var(--blue, #00A8A8);
+`
+
+export const LinkedinIcon = styled.img `
+height: 9vh;
+width: 10vw;
+margin-top: 28vh;
+margin-left: 65vh;
+display: flex;
+`
+export const ListaBateria = styled.div`
+font-size: 15px;
+`
+
+export const ListaPlugins = styled.div`
+font-size: 15px;
+margin-top: 18px;
 `

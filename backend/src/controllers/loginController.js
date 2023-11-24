@@ -11,7 +11,7 @@ async function login(request, response) {
 
     connection.query(query, params, (err, results) => {
         if (results.length > 0) {
-            bcrypt.compare(request.body.password, results[0].password, (errSenha, resultsSenha) => {
+            bcrypt.compare(request.body.senha, results[0].senha, (errSenha, resultsSenha) => {
                 if (resultsSenha) {                        
                     const userData = results[0];
                     const userId   = userData.id;

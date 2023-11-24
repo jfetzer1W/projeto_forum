@@ -1,5 +1,5 @@
 import { Texto } from "../../components/Footer/styled"
-import { Body, Box, CaixaDeTexto, Container, Form, FormImage, Header, Image, InputBox, Input, Label, ContainerForm, Divi, DivComport, LogoImg, ContainerFormulario, StyleForm, Botao, Register } from "./styled"
+import { CaixaDeTexto, Container, Form, FormImage, Header, Image, InputBox, Input, Label, ContainerForm, Divi, DivComport, LogoImg, ContainerFormulario, StyleForm, Botao, Register } from "./styled"
 import ImagemLogin from "../../Assets/imagemlogin.gif"
 import Logo from "../../Assets/imagemlogo.jpg"
 import { useNavigate } from "react-router-dom"
@@ -7,6 +7,7 @@ import { useState } from "react";
 import { baseUrl } from "../../services/Api";
 import axios from "axios";
 import { useToast } from '@chakra-ui/react'
+import { Box } from "@chakra-ui/react"
 
 function Cadastro() {
     const navigate = useNavigate();
@@ -20,33 +21,36 @@ function Cadastro() {
         navigate('/principal')
     }
 
+    const goToCadastro = () => {
+        navigate('/cadastro')
+    }
+
     const handleSubmit = (e) => {
         e.preventDefault();
 
+// Envia uma solicitação de login para o servidor usando o método POST do Axios
         axios.post(`${baseUrl}/auth/login`, formData)
             .then(function (response) {
-                console.log(response)
-                localStorage.setItem('user', response.data.data[0].id)
-                localStorage.setItem('token', response.data.data[0].token)
+ // Se a solicitação for bem-sucedida, armazena o ID do usuário e o token no localStorage
+                localStorage.setItem('user', response.data.data.id_user)
+                localStorage.setItem('token', response.data.data.token)
+
+                alert("Login realizado")
+// Redireciona o usuário para a página inicial (Home)
+                goToHome()
                 toast({
                     position: 'bottom-left',
-                    title: 'Sucesso',
-                    description: response.data.message,
-                    status: 'success',
-                    duration: 3000,
-                    isClosable: true,
+                    render: () => (
+                        <Box color='white' p={3} bg='blue.500'>
+                            Hello World
+                        </Box>
+                    ),
                 })
-                goToHome()
+
             })
             .catch(function (error) {
-                toast({
-                    position: 'bottom-left',
-                    title: 'Erro',
-                    description: error.response.data.msg,
-                    status: 'error',
-                    duration: 3000,
-                    isClosable: true,
-                })
+                alert("Erro")
+                console.log(error)
             });
 
         setFormData({
@@ -80,11 +84,11 @@ function Cadastro() {
                                     <div>
                                         <InputBox>
                                             <Label for="firstname">Email</Label>
-                                            <Input 
+                                            <Input
                                                 id="email"
-                                                type="text" 
-                                                name="email" 
-                                                placeholder="Digite seu email" 
+                                                type="text"
+                                                name="email"
+                                                placeholder="Digite seu email"
                                                 value={formData.email}
                                                 onChange={handleChange}
                                                 required
@@ -92,20 +96,20 @@ function Cadastro() {
                                         </InputBox>
                                         <InputBox>
                                             <Label for="senha">Senha</Label>
-                                            <Input 
-                                            id="senha" 
-                                            name="senha" 
-                                            placeholder="Digite sua senha" 
-                                            type="password"
-                                            value={formData.senha}
-                                            onChange={handleChange}
-                                            required
+                                            <Input
+                                                id="senha"
+                                                name="senha"
+                                                placeholder="Digite sua senha"
+                                                type="password"
+                                                value={formData.senha}
+                                                onChange={handleChange}
+                                                required
                                             />
                                         </InputBox>
                                     </div>
                                 </StyleForm>
-                                <Botao onClick={goToHome}>Entrar</Botao>
-                                <Register>Registrar</Register>
+                                <Botao onClick={handleSubmit}>Entrar</Botao>
+                                <Register type="button" onClick={goToCadastro}>Registrar</Register>
                             </ContainerFormulario>
                         </Divi>
                     </Form>

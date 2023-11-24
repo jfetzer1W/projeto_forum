@@ -85,16 +85,15 @@ export const Fundo = styled.div`
     padding: 2vh;
 `
 export const BannerImg = styled.img`
-    width: 100%;
-    height: 80%;
-    align-items: center;
+width:110vw;
+height: 50vh;
 `
 export const LogoPerfil = styled.img`
     width: 20vh;
     border-radius: 50%;
     height: 20vh;
     align-items: center;
-    border: 10px solid #1E2772;
+    border: 10px solid #1E2772;  
     margin-left: 3vw;
     margin-top: -10vh;
 `

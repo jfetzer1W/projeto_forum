@@ -106,7 +106,7 @@ export const StyleForm = styled.div`
 
 export const Botao = styled.button`
 width: 300px;
-height: 40px;
+height: 35px;
 border: none;
 background-color: #36e16a;
 padding: 0.62rem;
@@ -116,4 +116,21 @@ align-items: center;
 justify-content: center;
 border-radius: 15px;
 flex-shrink: 0;
+
+`
+export const BotaoRegi = styled.button`
+width: 300px;
+height: 35px;
+border: none;
+background-color: off white;
+padding: 0.62rem;
+cursor: pointer;
+display: flex;
+align-items: center;
+justify-content: center;
+border-radius: 15px;
+flex-shrink: 0;
+text-decoration: underline;
+color: blue;
+margin-right: 5vh;
 `
