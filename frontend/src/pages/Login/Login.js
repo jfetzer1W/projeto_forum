@@ -1,63 +1,62 @@
 import { Texto } from "../../components/Footer/styled"
-import { Container, Form, FormImage, Image, InputBox, Input, Label, ContainerForm, Divi, LogoImg, ContainerFormulario, StyleForm, Botao, BotaoRegi } from "./styled"
-import ImagemPrincipal from "../../Assets/imageleitura.png"
+import { CaixaDeTexto, Container, Form, FormImage, Header, Image, InputBox, Input, Label, ContainerForm, Divi, DivComport, LogoImg, ContainerFormulario, StyleForm, Botao, Register } from "./styled"
+import ImagemLogin from "../../Assets/imagemlogin.gif"
 import Logo from "../../Assets/imagemlogo.jpg"
 import { useNavigate } from "react-router-dom"
-import { useState } from "react"
-import axios from "axios"
-import { baseUrl } from "../../services/Api"
+import { useState } from "react";
+import { baseUrl } from "../../services/Api";
+import axios from "axios";
+import { useToast } from '@chakra-ui/react'
 import { Box } from "@chakra-ui/react"
-import { useToast } from "@chakra-ui/react"
 
 function Login() {
-    const navigate = useNavigate()
+    const navigate = useNavigate();
     const toast = useToast()
     const [formData, setFormData] = useState({
-        firstName: "",
-        sobrenome: "",
         email: "",
-        telefone: "",
-        senha: "",
-        confirmSenha: ""
+        senha: ""
     });
 
     const goToHome = () => {
-        navigate('/login')
+        navigate('/principal')
+    }
+
+    const goToCadastro = () => {
+        navigate('/cadastro')
     }
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        if (formData.senha !== formData.confirmSenha) {
-            alert("Senhas não coincidem")
-        } else {
-            console.log(formData)
-            axios.post(`${baseUrl}/user/create`, formData)
-                .then(function (response) {
-                    alert("Cadastro realizado")
-                    goToHome()
-                    toast({
-                        position: 'bottom-left',
-                        render: () => (
-                            <Box color='white' p={3} bg='green.500'>
-                                Sucesso!    
-                            </Box>
-                        ),
-                    })
-        
+
+// Envia uma solicitação de login para o servidor usando o método POST do Axios
+        axios.post(`${baseUrl}/auth/login`, formData)
+            .then(function (response) {
+ // Se a solicitação for bem-sucedida, armazena o ID do usuário e o token no localStorage
+                localStorage.setItem('user', response.data.data.id_user)
+                localStorage.setItem('token', response.data.data.token)
+
+                alert("Login realizado")
+// Redireciona o usuário para a página inicial (Home)
+                goToHome()
+                toast({
+                    position: 'bottom-left',
+                    render: () => (
+                        <Box color='white' p={3} bg='green.500'>
+                            Sucesso!
+                        </Box>
+                    ),
                 })
-                .catch(function (error) {
-                    console.log(error)
-                });
-        }
+
+            })
+            .catch(function (error) {
+                alert("Erro")
+                console.log(error)
+            });
 
         setFormData({
-            firstName: "",
-            sobrenome: "",
             email: "",
-            telefone: "",
             senha: "",
-            confirmSenha: ""
-        });
+        })
     }
 
     const handleChange = (e) => {
@@ -68,103 +67,49 @@ function Login() {
         });
     }
 
-    const goToLogin = () => {
-        navigate('/login')
-    }
-
-
     return (
         <>
 
             <Container>
-
                 <ContainerForm  >
                     <Form>
                         <Divi>
+
                             <FormImage>
-                                <Image src={ImagemPrincipal} />
+                                <Image src={ImagemLogin} />
                             </FormImage>
                             <ContainerFormulario>
                                 <LogoImg src={Logo} />
                                 <StyleForm >
                                     <div>
                                         <InputBox>
-                                            <Label for="firstname">Primeiro Nome</Label>
-                                            <Input
-                                                id="firstName"
-                                                type="text"
-                                                name="firstName"
-                                                value={formData.firstName}
-                                                onChange={handleChange}
-                                                placeholder="Digite seu primeiro nome"
-                                                required
-                                            />
-                                        </InputBox>
-                                        <InputBox>
-                                            <Label for="sobrenome">Sobrenome</Label>
-                                            <Input
-                                                id="sobrenome"
-                                                type="text"
-                                                name="sobrenome"
-                                                value={formData.sobrenome}
-                                                onChange={handleChange}
-                                                placeholder="Digite seu sobrenome"
-                                                required
-                                            />
-                                        </InputBox>
-                                        <InputBox>
-                                            <Label for="email">Email</Label>
+                                            <Label for="firstname">Email</Label>
                                             <Input
                                                 id="email"
                                                 type="text"
                                                 name="email"
+                                                placeholder="Digite seu email"
                                                 value={formData.email}
                                                 onChange={handleChange}
-                                                placeholder="Digite seu email"
                                                 required
                                             />
                                         </InputBox>
-                                    </div>
-                                    <div>
                                         <InputBox>
-                                            <Label for="telefone">Telefone</Label>
-                                            <Input
-                                                id="telefone"
-                                                type="text"
-                                                name="telefone"
-                                                value={formData.telefone}
-                                                onChange={handleChange}
-                                                placeholder="Digite seu numero de telefone"
-                                                required
-                                            />
-                                        </InputBox><InputBox>
                                             <Label for="senha">Senha</Label>
                                             <Input
                                                 id="senha"
-                                                type="password"
                                                 name="senha"
+                                                placeholder="Digite sua senha"
+                                                type="password"
                                                 value={formData.senha}
                                                 onChange={handleChange}
-                                                placeholder="Digite sua senha"
-                                                required
-                                            />
-                                        </InputBox>
-                                        <InputBox>
-                                            <Label for="confirmSenha">Confirme sua senha</Label>
-                                            <Input
-                                                id="confirmSenha"
-                                                type="password"
-                                                name="confirmSenha"
-                                                value={formData.confirmSenha}
-                                                onChange={handleChange}
-                                                placeholder="Digite seu primeiro nome"
                                                 required
                                             />
                                         </InputBox>
                                     </div>
                                 </StyleForm>
-                                <Botao onClick={handleSubmit}>Cadastrar</Botao>
-                                <BotaoRegi type="button" onClick={goToLogin}>Já possuo conta</BotaoRegi>
+                                <Botao onClick={handleSubmit}>Entrar</Botao>
+                                <Register type="button" onClick={goToCadastro}>Registrar</Register>
                             </ContainerFormulario>
                         </Divi>
                     </Form>

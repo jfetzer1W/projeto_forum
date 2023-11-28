@@ -10,8 +10,8 @@ function Rotas(){
         <BrowserRouter>
             <Routes>
                 <Route index element={<Login/>}/>
-                <Route path="login" element={<Cadastro/>}/>
-                <Route path="cadastro" element={<Login/>}/>
+                <Route path="login" element={<Login/>}/>
+                <Route path="cadastro" element={<Cadastro/>}/>
                 <Route path='principal' element={<Principal/>}/>
                 <Route path='config' element={<Config/>}/>
                 <Route path='diferencial' element={<Principal/>}/>

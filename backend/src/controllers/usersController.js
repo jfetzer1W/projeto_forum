@@ -1,7 +1,9 @@
 const connection = require('../config/db');
 const bcrypt = require('bcrypt');
 
+// Funçao listar todos os usuários no banco
 async function listUsers(request, response) {
+// consulta SQL para obter os usuários
     connection.query('SELECT * FROM users', (err, results) => {
         if (results) {
             response

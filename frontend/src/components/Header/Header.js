@@ -5,6 +5,8 @@ import { useEffect } from "react"
 import { baseUrl } from "../../services/Api"
 import axios from "axios"
 import { useState } from "react"
+import { Link } from "react-scroll"
+
 
 function Header() {
     const navigate = useNavigate()
@@ -21,6 +23,12 @@ function Header() {
     const goToHome = () => {
         navigate('/principal')
     }
+
+// Cria um estado chamado 'click' e uma função 'setClick' para modificar esse estado
+    const [click, setClick] = useState(false)
+    const handleClick = () => setClick(!click)
+
+    const closeMenu = () => setClick(false)
 
     useEffect(() => {
         axios.post(`${baseUrl}/find`, formDatas)
@@ -42,10 +50,17 @@ function Header() {
                     <FirstContainer>
                         <Logo1 src={Logo} />
                         <Topicos onClick={goToHome}>Home</Topicos>
-                        <Topicos>Diferencial</Topicos>
-                        <Topicos >Notícias</Topicos>
-                        <Topicos >Veículos</Topicos>
-                        <Topicos >Projeto</Topicos>
+                        <Topicos>
+                            <Link to="about" spy={true} smooth={true} offset={50} duration={500} onClick={closeMenu}> Diferencial</Link>
+                        </Topicos>
+                        <Topicos>
+                            <Link to="about1" spy={true} smooth={true} offset={500} duration={500} onClick={closeMenu}> Noticias</Link>
+                        </Topicos>
+                        <Topicos >
+                            <Link to="carros" spy={true} smooth={true} offset={500} duration={500} onClick={closeMenu}> Mercado</Link></Topicos>
+                        <Topicos>
+                            <Link to="projeto" spy={true} smooth={true} offset={500} duration={500} onClick={closeMenu}> Projeto</Link>
+                        </Topicos>
                     </FirstContainer>
                     <SecondContainer>
                         <Logins>

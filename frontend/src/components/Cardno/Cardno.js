@@ -2,6 +2,11 @@ import { Card, CardHeader, CardBody, CardFooter, Image, Stack, Heading, Text, Bu
 import { DivMaior } from './styled'
 
 function Cardno(props) {
+
+  const handleClick = () => {
+    window.open(props.noticia)
+};
+
     return (
   <DivMaior>
   <Card h='70vh' w='25vw' m='2.5'>
@@ -19,7 +24,7 @@ function Cardno(props) {
     </CardBody>
     <CardFooter>
       <ButtonGroup spacing='2'>
-        <Button variant='solid' colorScheme='blue'>
+        <Button onClick={handleClick} variant='solid' background="#36e16a" >
           {props.title}
           Acessar notícia
         </Button>

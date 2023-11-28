@@ -9,7 +9,9 @@ async function login(request, response) {
         request.body.email
     );
 
+// Executa uma
     connection.query(query, params, (err, results) => {
+//Verifica
         if (results.length > 0) {
             bcrypt.compare(request.body.senha, results[0].senha, (errSenha, resultsSenha) => {
                 if (resultsSenha) {                        
@@ -21,7 +23,8 @@ async function login(request, response) {
                         { expiresIn: 300 }
                     );
                     userData['token'] = token;
-
+                    
+// Se as credenciais do usuário são válidas, retorna sucesso (status 200)
                     response
                         .status(200)
                         .json({

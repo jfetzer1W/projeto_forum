@@ -133,7 +133,7 @@ height: 80vh;
 display: flex;
 flex-direction: row;
 gap: 3vw;
-background: blue;
+background: #A9A9A9;
 overflow: auto;
 flex: 0 0 100vw;
 transition: transform 0.5s ease;

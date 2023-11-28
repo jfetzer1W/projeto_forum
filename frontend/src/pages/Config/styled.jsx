@@ -59,7 +59,7 @@ export const SaveButton = styled.button`
     margin-left: 10px;
     justify-content: center;
     display: flex;
-    background-color: #1E2772;
+    background-color: #36e16a;
     border: 2%;
     border-radius: 10px;
     color: white;
@@ -93,7 +93,7 @@ export const LogoPerfil = styled.img`
     border-radius: 50%;
     height: 20vh;
     align-items: center;
-    border: 10px solid #1E2772;  
+    border: 10px solid #36e16a;  
     margin-left: 3vw;
     margin-top: -10vh;
 `
@@ -175,6 +175,7 @@ export const Buttom = styled.button`
     justify-content: center;
     border-radius: 8px;
     flex-shrink: 0;
-    margin-top: -20vh; 
+    margin-top: -30vh; 
     color: white;
-`
+    margin-left: 40px;
+    `

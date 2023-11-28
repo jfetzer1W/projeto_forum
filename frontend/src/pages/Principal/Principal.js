@@ -61,7 +61,7 @@ function Principal() {
                 </Main>
             </Cabeca>
             <Divv>
-                <Proposta>
+                <Proposta id='about'>
                     Diferencial
                     <Propospace>
                         <PropoImage src={PropoImage2} />
@@ -69,7 +69,7 @@ function Principal() {
                 </Proposta>
 
                 <TopicosPro>
-                    <Baterias id="baterias">
+                    <Baterias>
                         <Titulo />Baterias
                         <ListaBateria>
                             <li >Íon de Lítio</li>
@@ -84,9 +84,9 @@ function Principal() {
                             <li>Super-capacitor</li>
                         </ListaBateria>
                     </Baterias>
-                    <Plugins>
+                    <Plugins >
                         <Titulo>Plugins</Titulo>
-                        <ListaPlugins>
+                        <ListaPlugins id="about1">
                             <li>CHAdeMO</li>
                             <li>CCS (Combined Charging System)</li>
                             <li>Tesla Supercharger</li>
@@ -99,27 +99,33 @@ function Principal() {
                             <li>AC 3-Phase (Mennekes)</li>
                         </ListaPlugins>
                     </Plugins>
-                </TopicosPro>
+                    
+                </TopicosPro >
             </Divv>
-            <Div3>
+            <Div3 id="carros">
                 <Cardno 
-                conteudo="teste" 
-                link="https://www.portalsolar.com.br/_next/image?url=https%3A%2F%2Finstitucional-and-info-production.s3.us-east-2.amazonaws.com%2Fimages%2Fa7175c4d-fac2-4c7c-bad3-f34f55048e99%2Fquase-10-mil-carros-eletricos-sao-vendidos-no-brasil-em-outubro-POST.jpg&w=1920&q=100"
-                texto="Participação de veículos eletrificados leves no total de emplacamentos de automóveis no país chegou a 4,6%, mostra levantamento da ABVE"/>
-                <Cardno 
-                conteudo="teste2" 
-                link="https://p2.trrsf.com/image/fget/cf/774/0/images.terra.com/2023/11/20/planned-toyota-electric-vehicle-lineup_100819593_h-r1fnq6dpk2lu.jpg"
-                texto="Avanço das marcas chinesas e crescimento rápido do mercado de carros elétricos fez a Toyota se mexer e prometer 30 novos modelos"
+                conteudo="Área pública terá árvore fotovoltaica de carros elétricos em Porto Alegre" 
+                link="https://www.rbsdirect.com.br/filestore/7/5/0/9/6/8/4_f46a53e1a14b7a1/4869057_223155066b3886d.jpg?w=700&rv=2-10-05&safari"
+                texto="Chamado de Esquina do Futuro, projeto do terrário urbano"
+                noticia="https://gauchazh.clicrbs.com.br/colunistas/juliana-bublitz/noticia/2023/11/area-publica-tera-arvore-fotovoltaica-e-recarga-para-bikes-e-carros-eletricos-em-porto-alegre-clpb7p8rl000z012l2clcovld.html"
                 />
                 <Cardno 
-                conteudo="teste2" 
-                link="https://p2.trrsf.com/image/fget/cf/774/0/images.terra.com/2023/01/27/k5-1hbfz2xvdnbs5.png"
-                texto="CEO da Volkswagen México confirma que início da produção de carros elétricos começa em 2026; situação no Brasil mudou"
+                conteudo="Na contramão dos rivais, Hyundai e Kia veem forte demanda por carros elétricos" 
+                link="https://cdn.motor1.com/images/mgl/2NZWRM/s2/2024-hyundai-kona-electric.webp"
+                texto="Montadoras coreanas estão se saindo bem com seus carros elétricos."
+                noticia="https://insideevs.uol.com.br/news/698175/hyundai-kia-demanda-carros-eletricos/#:~:text=Na%20contram%C3%A3o%20dos%20principais%20concorrentes,demanda%2C%20principalmente%20nos%20Estados%20Unidos."
                 />
                 <Cardno 
-                conteudo="teste2" 
-                link="https://p2.trrsf.com/image/fget/cf/774/0/images.terra.com/2023/11/20/planned-toyota-electric-vehicle-lineup_100819593_h-r1fnq6dpk2lu.jpg"
-                texto=""
+                conteudo="Haval H6 e BYD Song Plus, dois chineses dominantes em outubro" 
+                link="https://p2.trrsf.com/image/fget/cf/774/0/images.terra.com/2023/11/03/20231009_160548-1iuvis1n9cbao.jpg"
+                texto="Novas marcas chinesas conquistaram mais uma vitória mensal em outubro."
+                noticia="https://www.terra.com.br/carros-motos/haval-h6-e-byd-song-plus-dois-chineses-dominantes-em-outubro,997fce4a0ce34b6c054fe597bcc96f00sk6ao8ko.html"
+                />
+                <Cardno 
+                conteudo="BYD recebe 44 mil inscrições para empregos em 7 dias." 
+                link="https://s2-g1.glbimg.com/cXAfFTf0_x9MMb2eCdf0exkV0cg=/0x0:3000x1999/984x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_59edd422c0c84a879bd37670ae4f538a/internal_photos/bs/2023/d/A/5RNbfASWW4W6s34aIJLg/fup20230704086.jpg"
+                texto="Currículos foram enviados para a plataforma da empresa"
+                noticia="https://g1.globo.com/ba/bahia/blogdoemprego/noticia/2023/07/11/byd-recebe-44-mil-inscricoes-para-empre-semana-apos-anuncio-de-fabricas-na-bahia.ghtml"
                 />
             
             </Div3>
@@ -141,7 +147,7 @@ function Principal() {
                 <TextRo>
                     Site feito por:
                 </TextRo>
-                <TextName>
+                <TextName id="projeto">
                     João Eduardo Widmann Fetzer
                 </TextName>
                 <Teorico onClick={handleClickPDF}>

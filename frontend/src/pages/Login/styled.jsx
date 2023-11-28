@@ -1,4 +1,3 @@
-
 import { styled } from "styled-components";
 
 export const CaixaDeTexto = styled.div`
@@ -20,7 +19,7 @@ export const Container = styled.div`
     height: 100vh; 
     /* display: flex;
     align-items: center; */
-    background: #0c0ce94d;
+    background: #8BDBA1;
 `
 
 export const ContainerForm = styled.div`
@@ -39,7 +38,7 @@ export const Body = styled.div`
     align-items: center;
     background: #0c0ce94d;
 `
-export const Form = styled.form`
+export const Form = styled.div`
     width: 70vw;
     display: flex;
     flex-direction: row;
@@ -60,12 +59,6 @@ export const Image = styled.img`
     width: 31rem;
 `
 
-export const Header = styled.div`
-    margin-bottom: 3rem;
-    display: flex;
-    justify-content: space-between;
-   
-`
 export const InputBox = styled.div`
     display: flex;
     flex-direction: column;
@@ -73,7 +66,8 @@ export const InputBox = styled.div`
 `
 export const Input = styled.input`
     margin: 0.6rem 0;
-    padding: 0.8rem 1.2rem;
+    padding: 1.5vh;
+    width: 40vh;
     border: none;
     border-radius: 10px;
     box-shadow: 1px 1px 6px #0000001c;
@@ -97,40 +91,38 @@ export const LogoImg = styled.img`
 export const ContainerFormulario = styled.div`
   display: flex;
   flex-direction: column;
+  padding: 5vh;
+  gap: 2vh;
 `
 
 export const StyleForm = styled.div`
     display: flex;
-    gap: 0px 25px;
 `
 
 export const Botao = styled.button`
-width: 300px;
-height: 35px;
-border: none;
-background-color: #36e16a;
-padding: 0.62rem;
-cursor: pointer;
-display: flex;
-align-items: center;
-justify-content: center;
-border-radius: 15px;
-flex-shrink: 0;
-
+    width: 280px;
+    height: 40px;
+    border: none;
+    background-color: #36e16a;
+    padding: 0.62rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 15px;
+    flex-shrink: 0;
 `
-export const BotaoRegi = styled.button`
-width: 300px;
-height: 35px;
-border: none;
-background-color: off white;
-padding: 0.62rem;
-cursor: pointer;
-display: flex;
-align-items: center;
-justify-content: center;
-border-radius: 15px;
-flex-shrink: 0;
-text-decoration: underline;
-color: blue;
-margin-right: 5vh;
+export const Register = styled.button`
+    color: #36e16a;
+    width: 280px;
+    height: 40px;
+    border: none;
+    background-color: #eee4e4;
+    padding: 0.62rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 15px;
+    flex-shrink: 0;
 `

@@ -45,6 +45,7 @@ export const Topicos = styled.button`
     font-weight: 400;
     text-align: center;
     gap: 10vh;
+    
 `
 export const Logins = styled.div`
     width: 9vw;
